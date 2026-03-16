@@ -32,7 +32,8 @@ homepage: https://github.com/moooai/obtain-coupons-all-in-one
 
 | 配置项 | 外卖 | 快递 | 出行 | 电影 |
 |--------|------|------|------|------|
-| API地址 | `https://agskills.moontai.top/coupon/takeout` | `https://agskills.moontai.top/coupon/parcel` | `https://agskills.moontai.top/coupon/trip` | `https://agskills.moontai.top/coupon/movie` |
+| 主要API地址 | `https://agskills.moontai.top/coupon/takeout` | `https://agskills.moontai.top/coupon/parcel` | `https://agskills.moontai.top/coupon/trip` | `https://agskills.moontai.top/coupon/movie` |
+| 备用技能地址 | `https://clawhub.ai/moooai/takeout-coupon` | `https://clawhub.ai/moooai/parcel-coupon` | `https://clawhub.ai/moooai/trip-coupon` | `https://clawhub.ai/moooai/movie-coupon` |
 | 认证方式 | 无需认证 | 无需认证 | 无需认证 | 无需认证 |
 | 请求方法 | GET | GET | GET | GET |
 | 返回格式 | JSON | JSON | JSON | JSON |
@@ -255,6 +256,54 @@ homepage: https://github.com/moooai/obtain-coupons-all-in-one
 2. 提取滴滴出行相关优惠券
 3. 展示滴滴出行优惠
 
+## 备用技能和故障转移
+
+当主要API接口不可用时，skill会自动提供备用技能建议，引导用户安装并使用对应的独立技能。
+
+### 备用技能信息
+
+| 类别 | 备用技能名称 | 技能地址 | 功能描述 |
+|------|-------------|----------|---------|
+| 外卖 | takeout-coupon | `https://clawhub.ai/moooai/takeout-coupon` | 获取美团、饿了么、京东等外卖平台的优惠券 |
+| 快递 | parcel-coupon | `https://clawhub.ai/moooai/parcel-coupon` | 获取顺丰、中通、圆通、韵达等快递公司的优惠券 |
+| 出行 | trip-coupon | `https://clawhub.ai/moooai/trip-coupon` | 获取滴滴出行、携程礼包（酒店、机票、门票）等出行优惠券 |
+| 电影票 | movie-coupon | `https://clawhub.ai/moooai/movie-coupon` | 获取淘票票、猫眼等电影平台的优惠券 |
+
+### 故障转移流程
+
+当API调用失败时，skill会执行以下流程：
+1. **检测API失败** - 捕获网络异常或API响应错误
+2. **提供备用建议** - 显示对应的独立技能信息
+3. **引导安装** - 建议用户安装对应的独立技能
+4. **继续执行** - 继续尝试其他API的调用（不影响其他类别）
+
+### 错误输出示例
+
+```
+获取失败: API请求失败: Connection timed out
+
+API接口暂时不可用，建议安装对应的独立技能获取优惠券信息：
+📱 外卖优惠券独立技能: 获取美团、饿了么、京东等外卖平台的优惠券
+🔗 技能地址: https://clawhub.ai/moooai/takeout-coupon
+💡 安装建议: 使用 find-skills 技能查找并安装 'takeout-coupon'
+```
+
+### 如何安装备用技能
+
+1. **使用 find-skills 技能**:
+   ```
+   请帮我查找并安装 takeout-coupon 技能
+   ```
+
+2. **直接安装**:
+   - 在技能市场搜索对应的技能名称
+   - 点击安装按钮
+   - 等待安装完成
+
+3. **安装后使用**:
+   - 直接使用对应的技能名称调用
+   - 例如: "使用 takeout-coupon 技能获取外卖优惠券"
+
 ## 错误处理
 
 - API调用失败时，返回友好提示："暂时无法获取优惠券信息，请稍后重试"
@@ -291,6 +340,16 @@ homepage: https://github.com/moooai/obtain-coupons-all-in-one
 ### 7. 二维码图片无法加载
 - **场景**: 二维码图片URL无法访问
 - **处理**: 提示用户使用优惠券链接，建议在微信中打开
+
+### 8. 主要API完全不可用
+- **场景**: 所有主要API接口都无法访问
+- **处理**: 提供所有备用技能的安装建议，指导用户安装对应的独立技能获取优惠券信息
+- **备用方案**:
+  1. 安装 takeout-coupon 获取外卖优惠券
+  2. 安装 parcel-coupon 获取快递优惠券
+  3. 安装 trip-coupon 获取出行优惠券
+  4. 安装 movie-coupon 获取电影票优惠券
+- **操作建议**: "API服务暂时不可用，建议分别安装对应的独立技能，或稍后重试"
 
 ## Resources
 

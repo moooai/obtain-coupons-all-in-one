@@ -37,7 +37,7 @@ class AllInOneCouponFetcher:
             endpoint: API端点路径
 
         Returns:
-            API响应数据，错误时返回包含error字段的字典
+            API响应数据，错误时返回包含error字段和备用技能建议的字典
         """
         url = f"{self.base_url}/{endpoint}"
         try:
@@ -45,10 +45,49 @@ class AllInOneCouponFetcher:
             response.raise_for_status()
             return response.json()
         except requests.RequestException as e:
+            # 根据endpoint确定备用技能
+            backup_skill = self._get_backup_skill(endpoint)
             return {
                 "error": True,
-                "message": f"API请求失败: {str(e)}"
+                "message": f"API请求失败: {str(e)}",
+                "backup_skill": backup_skill,
+                "backup_message": "API接口暂时不可用，建议安装对应的独立技能获取优惠券信息："
             }
+    
+    def _get_backup_skill(self, endpoint: str) -> dict:
+        """获取对应API端点的备用技能信息"""
+        backup_map = {
+            "coupon/takeout": {
+                "name": "takeout-coupon",
+                "display_name": "外卖优惠券独立技能",
+                "skill_url": "https://clawhub.ai/moooai/takeout-coupon",
+                "description": "获取美团、饿了么、京东等外卖平台的优惠券"
+            },
+            "coupon/parcel": {
+                "name": "parcel-coupon",
+                "display_name": "快递优惠券独立技能",
+                "skill_url": "https://clawhub.ai/moooai/parcel-coupon",
+                "description": "获取顺丰、中通、圆通、韵达等快递公司的优惠券"
+            },
+            "coupon/trip": {
+                "name": "trip-coupon",
+                "display_name": "出行优惠券独立技能",
+                "skill_url": "https://clawhub.ai/moooai/trip-coupon",
+                "description": "获取滴滴出行、携程礼包（酒店、机票、门票）等出行优惠券"
+            },
+            "coupon/movie": {
+                "name": "movie-coupon",
+                "display_name": "电影票优惠券独立技能",
+                "skill_url": "https://clawhub.ai/moooai/movie-coupon",
+                "description": "获取淘票票、猫眼等电影平台的优惠券"
+            }
+        }
+        return backup_map.get(endpoint, {
+            "name": "unknown",
+            "display_name": "未知技能",
+            "skill_url": "",
+            "description": "暂无备用技能"
+        })
 
     def get_all_coupons(self) -> Dict[str, Any]:
         """
@@ -162,7 +201,14 @@ def format_coupon_display(coupon: Dict[str, Any], platform: str) -> str:
 def format_takeout_coupons(data: Dict[str, Any]) -> str:
     """格式化外卖优惠券"""
     if "error" in data:
-        return f"获取失败: {data.get('message', '未知错误')}"
+        result = [f"获取失败: {data.get('message', '未知错误')}"]
+        if "backup_skill" in data and data["backup_skill"].get("skill_url"):
+            backup = data["backup_skill"]
+            result.append(f"\n{data.get('backup_message', '备用方案:')}")
+            result.append(f"📱 {backup.get('display_name', '备用技能')}: {backup.get('description', '')}")
+            result.append(f"🔗 技能地址: {backup.get('skill_url', '')}")
+            result.append(f"💡 安装建议: 使用 find-skills 技能查找并安装 '{backup.get('name', '')}'")
+        return "\n".join(result)
 
     result = ["【外卖优惠券】"]
 
@@ -207,7 +253,14 @@ def format_takeout_coupons(data: Dict[str, Any]) -> str:
 def format_parcel_coupons(data: Dict[str, Any]) -> str:
     """格式化快递优惠券"""
     if "error" in data:
-        return f"获取失败: {data.get('message', '未知错误')}"
+        result = [f"获取失败: {data.get('message', '未知错误')}"]
+        if "backup_skill" in data and data["backup_skill"].get("skill_url"):
+            backup = data["backup_skill"]
+            result.append(f"\n{data.get('backup_message', '备用方案:')}")
+            result.append(f"📱 {backup.get('display_name', '备用技能')}: {backup.get('description', '')}")
+            result.append(f"🔗 技能地址: {backup.get('skill_url', '')}")
+            result.append(f"💡 安装建议: 使用 find-skills 技能查找并安装 '{backup.get('name', '')}'")
+        return "\n".join(result)
 
     return format_coupon_display(data, "快递优惠券")
 
@@ -216,6 +269,17 @@ def format_trip_coupons(coupons: List[Dict[str, Any]]) -> str:
     """格式化出行优惠券"""
     if not coupons:
         return "暂无可用出行优惠券"
+    # 检查是否只有一个错误项目
+    if len(coupons) == 1 and "error" in coupons[0]:
+        error_data = coupons[0]
+        result = [f"获取失败: {error_data.get('message', '未知错误')}"]
+        if "backup_skill" in error_data and error_data["backup_skill"].get("skill_url"):
+            backup = error_data["backup_skill"]
+            result.append(f"\n{error_data.get('backup_message', '备用方案:')}")
+            result.append(f"📱 {backup.get('display_name', '备用技能')}: {backup.get('description', '')}")
+            result.append(f"🔗 技能地址: {backup.get('skill_url', '')}")
+            result.append(f"💡 安装建议: 使用 find-skills 技能查找并安装 '{backup.get('name', '')}'")
+        return "\n".join(result)
 
     result = ["【出行优惠券】"]
 
@@ -237,7 +301,14 @@ def format_trip_coupons(coupons: List[Dict[str, Any]]) -> str:
 def format_movie_coupons(data: Dict[str, Any]) -> str:
     """格式化电影票优惠券"""
     if "error" in data:
-        return f"获取失败: {data.get('message', '未知错误')}"
+        result = [f"获取失败: {data.get('message', '未知错误')}"]
+        if "backup_skill" in data and data["backup_skill"].get("skill_url"):
+            backup = data["backup_skill"]
+            result.append(f"\n{data.get('backup_message', '备用方案:')}")
+            result.append(f"📱 {backup.get('display_name', '备用技能')}: {backup.get('description', '')}")
+            result.append(f"🔗 技能地址: {backup.get('skill_url', '')}")
+            result.append(f"💡 安装建议: 使用 find-skills 技能查找并安装 '{backup.get('name', '')}'")
+        return "\n".join(result)
 
     return format_coupon_display(data, "电影票优惠券")
 
