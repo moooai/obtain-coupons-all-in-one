@@ -44,7 +44,7 @@ homepage: https://github.com/moooai/obtain-coupons-all-in-one
 - 美团外卖：隐藏外卖券列表
 - 饿了么/淘宝闪购：隐藏外卖券列表
 - 京东外卖：隐藏外卖券列表
-- 聚合H5页面：统一领券页面
+- 查找更多优惠券：公众号领券入口（外卖、电影、快递、旅游、打车）
 
 #### 快递优惠券
 - 顺丰、中通、圆通、韵达、申通、菜鸟等：一站式智能寄件服务
@@ -64,29 +64,98 @@ homepage: https://github.com/moooai/obtain-coupons-all-in-one
 {
   "美团隐藏外卖券列表": [
     {
+      "title": "美团隐藏口令 852298 （大额）",
+      "coupon_code": "852298",
+      "guideline": "打开美团APP, 搜索框中输入：852298 ，立即领取大额优惠券"
+    },
+    {
       "title": "美团外卖节(主推)🔥🔥",
-      "coupon_code": "1 %复制信息#% 打开团App http:/¥wnYjVmNWRlNmU¥一起领",
-      "guideline": "请复制完整的优惠券代码，打开美团APP领取"
+      "coupon_code": "❤️复制整条信息，打开👉美团👈 http:/💰t7NWIxNDQ0NTE💰",
+      "guideline": "手机先复制优惠券代码，打开美团APP自动领取"
+    },
+    {
+      "title": "美团外卖甄选好店🔥🔥",
+      "coupon_code": "❤️复制整条信息，打开👉美团👈 http:/💰w0OGFiZjdmYTk💰",
+      "guideline": "手机先复制优惠券代码，打开美团APP自动领取"
+    },
+    {
+      "title": "美团外卖【品牌商品券🔥🔥】",
+      "coupon_code": "❤️复制整条信息，打开👉美团👈 http:/💰wuMzJlZGFlMTY💰",
+      "guideline": "手机先复制完整的优惠券代码，打开美团APP自动领取"
+    },
+    {
+      "title": "美团外卖【神券包】 9.9元购360元年卡",
+      "coupon_code": "❤️复制整条信息，打开👉美团👈 http:/💰ydZWY2NjQ2NDg💰",
+      "guideline": "手机先复制完整的优惠券代码，打开美团APP自动领取"
     }
   ],
-  "饿了么/淘宝闪购隐藏外卖券列表": [...],
-  "京东隐藏外卖券列表": [...],
-  "聚合H5页面": {
-    "title": "外卖券统一领取页面",
-    "coupon_h5_qrcode_img_url": "https://...",
-    "guideline": "若无法复制优惠券代码，可以使用微信扫码打开领券页面"
+  "饿了么/淘宝闪购隐藏外卖券列表": [
+    {
+      "title": "淘宝闪购-叠红包🔥🔥",
+      "coupon_code": "￥Q8rJTMpjkKE￥/ HU7405 【闪购品牌日 单单有福利】",
+      "guideline": "请复制完整的优惠券代码，打开淘宝APP领取"
+    },
+    {
+      "title": "淘宝闪购-天天领红包(全场景, 最高抢66元大额红包)",
+      "coupon_code": "0fυィ直文本2:/＄TMpQp4v＄~.淘宝闪购App【天天领红包（全场景通用）】",
+      "guideline": "请复制完整的优惠券代码，打开淘宝APP领取"
+    },
+    {
+      "title": "淘宝闪购-宵夜专场",
+      "coupon_code": "0複制文本666:/＄TMpQ6cz＄~.淘宝闪购App【闪购夜宵专享会场】",
+      "guideline": "请复制完整的优惠券代码，打开淘宝APP领取"
+    },
+    {
+      "title": "淘宝闪购-学生专场",
+      "coupon_code": "29 HU7405 2:/TpOYTMpkOTb✔四学生专享天天好价",
+      "guideline": "请复制完整的优惠券代码，打开淘宝APP领取"
+    }
+  ],
+  "京东隐藏外卖券列表": [
+    {
+      "title": "京东隐藏密令（大额）",
+      "coupon_code": "快乐干饭009",
+      "guideline": "打开京东APP, 【首页】的搜索框中输入：快乐干饭009 ，立即领取大额优惠券"
+    },
+    {
+      "title": "京东外卖-惊喜红包(主推)",
+      "coupon_code": "！V6M0P42CyIm6sAe4！ CA1565",
+      "guideline": "请复制完整的优惠券代码，打开京东APP领取"
+    },
+    {
+      "title": "京东外卖-高Y品质会场",
+      "coupon_code": " ！F4v6f1xHQipuCbW8！ CA1331",
+      "guideline": "请复制完整的优惠券代码，打开京东APP领取"
+    },
+    {
+      "title": "京东外卖-夜宵专场",
+      "coupon_code": "！I3xPR007jcyak7Uo！ CA3576",
+      "guideline": "请复制完整的优惠券代码，打开京东APP领取"
+    }
+  ],
+  "查找更多优惠券": {
+    "title": "更多类型优惠券（外卖、电影、快递、旅游、打车)",
+    "coupon_h5_qrcode_img_url": "https://moontai-static.oss-cn-shenzhen.aliyuncs.com/qrcode_for_gh.jpg",
+    "guideline": "可以使用微信扫码后领券。关注不迷路，天天领券！"
   }
 }
 ```
 
 **快递优惠券:**
 ```json
-{
-  "title": "快递一站式服务，智能寄件，智能匹配价格；单单享优惠，件件有折扣",
-  "coupon_url": "https://open.cdyunzhanxinxi.com/link/...",
-  "coupon_qrcode_img_url": "https://moontai-static.oss-cn-shenzhen.aliyuncs.com/coupon-parcel.png",
-  "guideline": "点击链接下单(建议用微信打开)，或使用微信扫描二维码下单（单单享优惠）"
-}
+[
+  {
+    "title": "快递一站式服务，智能寄件，智能匹配价格；单单享优惠，件件有折扣",
+    "coupon_url": "https://open.cdyunzhanxinxi.com/link/100058569b79be0bd2561000406SEVGA",
+    "coupon_qrcode_img_url": "https://moontai-static.oss-cn-shenzhen.aliyuncs.com/coupon-parcel.png",
+    "guideline": "点击链接下单(建议用微信打开)，或使用微信扫描二维码下单（单单享优惠）"
+  },
+  {
+    "title": "更多优惠券！（外卖、电影、快递、旅游、打车)",
+    "coupon_h5_qrcode_img_url": "https://moontai-static.oss-cn-shenzhen.aliyuncs.com/qrcode_for_gh.jpg",
+    "guideline": "可以使用微信扫码后领券。关注不迷路，天天领券！"
+  }
+]
 ```
 
 **出行优惠券:**
@@ -94,27 +163,39 @@ homepage: https://github.com/moooai/obtain-coupons-all-in-one
 [
   {
     "title": "滴滴出行大礼包，打车券天天领",
-    "coupon_url": "https://open.cdyunzhanxinxi.com/link/...",
+    "coupon_url": "https://open.cdyunzhanxinxi.com/link/100115769b7d6d0087771002k13YX0SY",
     "coupon_qrcode_img_url": "https://moontai-static.oss-cn-shenzhen.aliyuncs.com/coupon-trip.png",
     "guideline": "点击链接领券(建议用微信打开)，或使用微信扫描二维码领券"
   },
   {
     "title": "携程礼包天天领，酒店、机票、门票",
-    "coupon_url": "https://open.cdyunzhanxinxi.com/link/...",
+    "coupon_url": "https://open.cdyunzhanxinxi.com/link/100012769b7d927254211000c1x1UOrw",
     "coupon_qrcode_img_url": "https://moontai-static.oss-cn-shenzhen.aliyuncs.com/trip-xiecheng.png",
     "guideline": "点击链接领券(建议用微信打开)，或使用微信扫描二维码领券"
+  },
+  {
+    "title": "更多优惠券！（外卖、电影、快递、旅游、打车)",
+    "coupon_h5_qrcode_img_url": "https://moontai-static.oss-cn-shenzhen.aliyuncs.com/qrcode_for_gh.jpg",
+    "guideline": "可以使用微信扫码后领券。关注不迷路，天天领券！"
   }
 ]
 ```
 
 **电影票优惠券:**
 ```json
-{
-  "title": "淘票票大礼包，隐藏券天天领",
-  "coupon_url": "https://open.cdyunzhanxinxi.com/link/...",
-  "coupon_qrcode_img_url": "https://moontai-static.oss-cn-shenzhen.aliyuncs.com/movie-taopp.png",
-  "guideline": "点击链接领券(建议用微信打开)，或使用微信扫描二维码领券"
-}
+[
+  {
+    "title": "淘票票大礼包，隐藏券天天领",
+    "coupon_url": "https://open.cdyunzhanxinxi.com/link/100044269b7dd6d7228a10003ePIAh14",
+    "coupon_qrcode_img_url": "https://moontai-static.oss-cn-shenzhen.aliyuncs.com/movie-taopp.png",
+    "guideline": "点击链接领券(建议用微信打开)，或使用微信扫描二维码领券"
+  },
+  {
+    "title": "更多优惠券！（外卖、电影、快递、旅游、打车)",
+    "coupon_h5_qrcode_img_url": "https://moontai-static.oss-cn-shenzhen.aliyuncs.com/qrcode_for_gh.jpg",
+    "guideline": "可以使用微信扫码后领券。关注不迷路，天天领券！"
+  }
+]
 ```
 
 ## 任务类型
@@ -140,9 +221,9 @@ homepage: https://github.com/moooai/obtain-coupons-all-in-one
 - 滴滴出行 → 滴滴出行大礼包
 - 携程 → 携程礼包天天领
 
-### 4. 统一展示聚合页面
+### 4. 展示「查找更多优惠券」入口
 
-对于无法复制优惠券代码的外卖，提供聚合H5二维码页面。
+返回公众号二维码图片（qrcode_for_gh.jpg），供用户微信扫码关注后天天领更多类型的券。
 
 ## When to use（触发场景）
 
@@ -206,37 +287,89 @@ homepage: https://github.com/moooai/obtain-coupons-all-in-one
 ```
 【外卖优惠券】
 【美团外卖】
-1. 美团外卖节(主推)🔥🔥
-   优惠券代码：1 %复制信息#% 打开团App http:/¥wnYjVmNWRlNmU¥一起领
-   领取说明：请复制完整的优惠券代码，打开美团APP领取
+1. 美团隐藏口令 852298 （大额）
+   优惠券代码：852298
+   领取说明：打开美团APP, 搜索框中输入：852298 ，立即领取大额优惠券
+
+2. 美团外卖节(主推)🔥🔥
+   优惠券代码：❤️复制整条信息，打开👉美团👈 http:/💰t7NWIxNDQ0NTE💰
+   领取说明：手机先复制优惠券代码，打开美团APP自动领取
+
+3. 美团外卖甄选好店🔥🔥
+   优惠券代码：❤️复制整条信息，打开👉美团👈 http:/💰w0OGFiZjdmYTk💰
+   领取说明：手机先复制优惠券代码，打开美团APP自动领取
+
+4. 美团外卖【品牌商品券🔥🔥】
+   优惠券代码：❤️复制整条信息，打开👉美团👈 http:/💰wuMzJlZGFlMTY💰
+   领取说明：手机先复制完整的优惠券代码，打开美团APP自动领取
+
+5. 美团外卖【神券包】 9.9元购360元年卡
+   优惠券代码：❤️复制整条信息，打开👉美团👈 http:/💰ydZWY2NjQ2NDg💰
+   领取说明：手机先复制完整的优惠券代码，打开美团APP自动领取
 
 【淘宝闪购/饿了么】
-...
+1. 淘宝闪购-叠红包🔥🔥
+   优惠券代码：￥Q8rJTMpjkKE￥/ HU7405 【闪购品牌日 单单有福利】
+   领取说明：请复制完整的优惠券代码，打开淘宝APP领取
+
+2. 淘宝闪购-天天领红包(全场景, 最高抢66元大额红包)
+   优惠券代码：0fυィ直文本2:/＄TMpQp4v＄~.淘宝闪购App【天天领红包（全场景通用）】
+   领取说明：请复制完整的优惠券代码，打开淘宝APP领取
+
+3. 淘宝闪购-宵夜专场
+   优惠券代码：0複制文本666:/＄TMpQ6cz＄~.淘宝闪购App【闪购夜宵专享会场】
+   领取说明：请复制完整的优惠券代码，打开淘宝APP领取
+
+4. 淘宝闪购-学生专场
+   优惠券代码：29 HU7405 2:/TpOYTMpkOTb✔四学生专享天天好价
+   领取说明：请复制完整的优惠券代码，打开淘宝APP领取
 
 【京东外卖】
-...
+1. 京东隐藏密令（大额）
+   优惠券代码：快乐干饭009
+   领取说明：打开京东APP, 【首页】的搜索框中输入：快乐干饭009 ，立即领取大额优惠券
 
-【聚合领券页面】
-二维码图片：https://...
-领取说明：若无法复制优惠券代码，可以使用微信扫码打开领券页面
+2. 京东外卖-惊喜红包(主推)
+   优惠券代码：！V6M0P42CyIm6sAe4！ CA1565
+   领取说明：请复制完整的优惠券代码，打开京东APP领取
+
+3. 京东外卖-高Y品质会场
+   优惠券代码： ！F4v6f1xHQipuCbW8！ CA1331
+   领取说明：请复制完整的优惠券代码，打开京东APP领取
+
+4. 京东外卖-夜宵专场
+   优惠券代码：！I3xPR007jcyak7Uo！ CA3576
+   领取说明：请复制完整的优惠券代码，打开京东APP领取
+
+【查找更多优惠券】
+二维码图片：https://moontai-static.oss-cn-shenzhen.aliyuncs.com/qrcode_for_gh.jpg
+领取说明：可以使用微信扫码后领券。关注不迷路，天天领券！
 
 【快递优惠券】
-标题: 快递一站式服务，智能寄件，智能匹配价格；单单享优惠，件件有折扣
-优惠券链接: https://...
+1. 快递一站式服务，智能寄件，智能匹配价格；单单享优惠，件件有折扣
+优惠券链接: https://open.cdyunzhanxinxi.com/link/100058569b79be0bd2561000406SEVGA
 （建议用微信打开）
-...
+二维码图片: https://moontai-static.oss-cn-shenzhen.aliyuncs.com/coupon-parcel.png
+使用说明: 点击链接下单(建议用微信打开)，或使用微信扫描二维码下单（单单享优惠）
 
 【出行优惠券】
 【滴滴出行】
-...
+1. 滴滴出行大礼包，打车券天天领
+优惠券链接: https://open.cdyunzhanxinxi.com/link/100115769b7d6d0087771002k13YX0SY
+二维码图片: https://moontai-static.oss-cn-shenzhen.aliyuncs.com/coupon-trip.png
+使用说明: 点击链接领券(建议用微信打开)，或使用微信扫描二维码领券
 
 【携程礼包】
-...
+2. 携程礼包天天领，酒店、机票、门票
+优惠券链接: https://open.cdyunzhanxinxi.com/link/100012769b7d927254211000c1x1UOrw
+二维码图片: https://moontai-static.oss-cn-shenzhen.aliyuncs.com/trip-xiecheng.png
+使用说明: 点击链接领券(建议用微信打开)，或使用微信扫描二维码领券
 
 【电影票优惠券】
-标题: 淘票票大礼包，隐藏券天天领
-优惠券链接: https://...
-...
+1. 淘票票大礼包，隐藏券天天领
+优惠券链接: https://open.cdyunzhanxinxi.com/link/100044269b7dd6d7228a10003ePIAh14
+二维码图片: https://moontai-static.oss-cn-shenzhen.aliyuncs.com/movie-taopp.png
+使用说明: 点击链接领券(建议用微信打开)，或使用微信扫描二维码领券
 ```
 
 ### 示例2: 用户指定类别
