@@ -3,7 +3,7 @@ name: obtain-coupons-all-in-one
 display_name: 全平台优惠券助手-外卖、快递、出行、电影票一站式获取
 description: 综合优惠券获取工具，支持外卖（美团、饿了么、京东）、快递（顺丰、中通、圆通等）、出行（滴滴、携程）、电影票（淘票票、猫眼）等全平台优惠券，一键获取所有优惠。
 english_description: All-in-one coupon fetcher supporting takeout (Meituan, Ele.me, JD), parcel/courier (SF, ZTO, YTO, etc.), travel (DiDi, Ctrip), and movie tickets (Taopiaopiao, Maoyan) coupons with one-click access to all discounts.
-version: 2.0.0
+version: 2.0.1
 author: moooai
 permissions: 网络访问权限（调用各平台优惠券API）
 homepage: https://github.com/moooai/obtain-coupons-all-in-one
