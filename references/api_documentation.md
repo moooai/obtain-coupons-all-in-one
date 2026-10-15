@@ -8,7 +8,7 @@
 |-----------|----------|---------|
 | 外卖优惠券 | `https://agskills.moontai.top/coupon/takeout` | 美团、饿了么/淘宝闪购、京东 |
 | 快递优惠券 | `https://agskills.moontai.top/coupon/parcel` | 顺丰、中通、圆通、韵达、申通、菜鸟 |
-| 出行优惠券 | `https://agskills.moontai.top/coupon/trip` | 滴滴出行、携程 |
+| 出行优惠券 | `https://agskills.moontai.top/coupon/trip` | 滴滴出行、酒店优惠礼包 |
 | 电影票优惠券 | `https://agskills.moontai.top/coupon/movie` | 淘票票、猫眼 |
 
 ## 通用配置
@@ -34,11 +34,6 @@
 ```json
 {
   "美团隐藏外卖券列表": [
-    {
-      "title": "美团隐藏口令 852298 （大额）",
-      "coupon_code": "852298",
-      "guideline": "打开美团APP, 搜索框中输入：852298 ，立即领取大额优惠券"
-    },
     {
       "title": "美团外卖节(主推)🔥🔥",
       "coupon_code": "❤️复制整条信息，打开👉美团👈 http:/💰t7NWIxNDQ0NTE💰",
@@ -84,11 +79,6 @@
   ],
   "京东隐藏外卖券列表": [
     {
-      "title": "京东隐藏密令（大额）",
-      "coupon_code": "快乐干饭009",
-      "guideline": "打开京东APP, 【首页】的搜索框中输入：快乐干饭009 ，立即领取大额优惠券"
-    },
-    {
       "title": "京东外卖-惊喜红包(主推)",
       "coupon_code": "！V6M0P42CyIm6sAe4！ CA1565",
       "guideline": "请复制完整的优惠券代码，打开京东APP领取"
@@ -104,13 +94,26 @@
       "guideline": "请复制完整的优惠券代码，打开京东APP领取"
     }
   ],
+  "扫码领取/H5网页跳转领取": [
+    {
+      "title": "美团优惠券领取页",
+      "coupon_url": "https://h5.sichuanyunzhan.com/pages_single/meiTuan/index?platform=singlePage&pid=e467cdcafe2b1791cdfc&accountsId=nEjX0zy4Zmyq",
+      "coupon_qrcode_img_url": "https://moontai-static.oss-cn-shenzhen.aliyuncs.com/meituan-614d8c70-26c5-43bc-9e91-4468651709e8.png",
+      "guideline": "点击链接下单(建议用微信打开)，或使用微信扫描二维码下单（单单享优惠）"
+    },
+    {
+      "title": "饿了么/淘宝闪购优惠券领取页",
+      "coupon_url": "https://h5.sichuanyunzhan.com/pages_single/hungry/index?platform=singlePage&pid=e467cdcafe2b1791cdfc&accountsId=nEjX0zy4Zmyq",
+      "coupon_qrcode_img_url": "https://moontai-static.oss-cn-shenzhen.aliyuncs.com/taobao-9dd25c45-2e2c-451d-af71-a502f815de16.png",
+      "guideline": "点击链接下单(建议用微信打开)，或使用微信扫描二维码下单（单单享优惠）"
+    }
+  ],
   "查找更多优惠券": {
     "title": "更多类型优惠券（外卖、电影、快递、旅游、打车)",
     "coupon_h5_qrcode_img_url": "https://moontai-static.oss-cn-shenzhen.aliyuncs.com/qrcode_for_gh.jpg",
     "guideline": "可以使用微信扫码后领券。关注不迷路，天天领券！"
   }
-}
-```
+}```
 
 ### 响应字段
 
@@ -150,8 +153,7 @@
     "coupon_h5_qrcode_img_url": "https://moontai-static.oss-cn-shenzhen.aliyuncs.com/qrcode_for_gh.jpg",
     "guideline": "可以使用微信扫码后领券。关注不迷路，天天领券！"
   }
-]
-```
+]```
 
 ### 响应字段
 
@@ -177,14 +179,14 @@
 [
   {
     "title": "滴滴出行大礼包，打车券天天领",
-    "coupon_url": "https://open.cdyunzhanxinxi.com/link/100115769b7d6d0087771002k13YX0SY",
-    "coupon_qrcode_img_url": "https://moontai-static.oss-cn-shenzhen.aliyuncs.com/coupon-trip.png",
+    "coupon_url": "https://h5.sichuanyunzhan.com/pages_single/didi/index?platform=singlePage&pid=e467cdcafe2b1791cdfc&accountsId=nEjX0zy4Zmyq",
+    "coupon_qrcode_img_url": "https://moontai-static.oss-cn-shenzhen.aliyuncs.com/didi-64c76f2b-0bf5-483f-beb9-57061c31f3e0.png",
     "guideline": "点击链接领券(建议用微信打开)，或使用微信扫描二维码领券"
   },
   {
-    "title": "携程礼包天天领，酒店、机票、门票",
-    "coupon_url": "https://open.cdyunzhanxinxi.com/link/100012769b7d927254211000c1x1UOrw",
-    "coupon_qrcode_img_url": "https://moontai-static.oss-cn-shenzhen.aliyuncs.com/trip-xiecheng.png",
+    "title": "酒店优惠大礼包，住宿出行天天领",
+    "coupon_url": "https://h5.sichuanyunzhan.com/pages_single/hotel/index?platform=singlePage&pid=e467cdcafe2b1791cdfc&accountsId=nEjX0zy4Zmyq",
+    "coupon_qrcode_img_url": "https://moontai-static.oss-cn-shenzhen.aliyuncs.com/hotel-661139fb-17c1-4b88-a42b-7a02054af1b5.png",
     "guideline": "点击链接领券(建议用微信打开)，或使用微信扫描二维码领券"
   },
   {
@@ -192,8 +194,7 @@
     "coupon_h5_qrcode_img_url": "https://moontai-static.oss-cn-shenzhen.aliyuncs.com/qrcode_for_gh.jpg",
     "guideline": "可以使用微信扫码后领券。关注不迷路，天天领券！"
   }
-]
-```
+]```
 
 ### 响应字段
 
@@ -219,9 +220,8 @@
 ```json
 [
   {
-    "title": "淘票票大礼包，隐藏券天天领",
-    "coupon_url": "https://open.cdyunzhanxinxi.com/link/100044269b7dd6d7228a10003ePIAh14",
-    "coupon_qrcode_img_url": "https://moontai-static.oss-cn-shenzhen.aliyuncs.com/movie-taopp.png",
+    "title": "电影票优惠券-支持用户在线购买全国10000+影院电影票、用户享受8折起购票优惠",
+    "coupon_url": "https://personal.yunzhanxinxi.com/movie/?promotion_id=yz-69870112-218077-267995&user_source=vip",
     "guideline": "点击链接领券(建议用微信打开)，或使用微信扫描二维码领券"
   },
   {
@@ -229,8 +229,7 @@
     "coupon_h5_qrcode_img_url": "https://moontai-static.oss-cn-shenzhen.aliyuncs.com/qrcode_for_gh.jpg",
     "guideline": "可以使用微信扫码后领券。关注不迷路，天天领券！"
   }
-]
-```
+]```
 
 ### 响应字段
 
@@ -279,8 +278,8 @@
 - 或使用微信扫描coupon_qrcode_img_url
 
 ### 出行优惠券
-- 根据用户需求选择滴滴或携程
-- 支持酒店、机票、门票等多种出行场景
+- 根据用户需求选择滴滴或酒店优惠礼包
+- 支持打车、住宿等多种出行场景
 
 ### 电影票优惠券
 - 适合淘票票、猫眼等主流电影平台
